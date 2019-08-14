@@ -1,4 +1,4 @@
-# How to Use Spreadsheet Control to Create a Dat Entry Form
+# How to Use Spreadsheet Control to Create a Data Entry Form
 
 *Files to look at*:
 
