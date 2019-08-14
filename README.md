@@ -10,4 +10,4 @@ The following code example shows how to use the SpreadsheetControl to to create 
 
 ![image](/media/project_image.png)
 
-![Refer to another repository for a WPF code sample project](https://github.com/DevExpress-Examples/how-to-use-spreadsheetcontrol-to-create-a-data-entry-form)
+[Refer to another repository for a WPF code sample project](https://github.com/DevExpress-Examples/how-to-use-spreadsheetcontrol-to-create-a-data-entry-form)
