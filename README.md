@@ -2,7 +2,7 @@
 
 *Files to look at*:
 
-* [MainForm.cs](./CS/DataEntryFormSample/MainForm.cs) (VB: [MainForm.vb](./VBDataEntryFormSample/MainForm.vb))
+* [MainForm.cs](./CS/DataEntryFormSample/MainForm.cs) (VB: [MainForm.vb](./VB/DataEntryFormSample/MainForm.vb))
 * [PayrollModel.cs](./CS/DataEntryFormSample/PayrollModel.cs) (VB: [PayrollModel.vb](./VB/DataEntryFormSample/PayrollModel.vb))
 * [SpreadsheetBindingManager.cs](./CS/DataEntryFormSample/SpreadsheetBindingManager.cs) (VB: [SpreadsheetBindingManager.vb](./VB/DataEntryFormSample/SpreadsheetBindingManager.vb))
 
