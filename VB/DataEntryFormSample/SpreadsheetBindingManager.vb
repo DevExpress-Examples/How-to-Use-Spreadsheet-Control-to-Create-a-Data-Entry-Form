@@ -225,10 +225,10 @@ Namespace DataEntryFormSample
         End Sub
 
         Private Sub ActivateCellEditor()
-            'INSTANT VB NOTE: The variable sheet was renamed since Visual Basic does not handle local variables named the same as class members well:
-            Dim sheet_Renamed = Sheet
-            If sheet_Renamed IsNot Nothing Then
-                Dim editors = sheet_Renamed.CustomCellInplaceEditors.GetCustomCellInplaceEditors(sheet_Renamed.Selection)
+            
+            Dim _sheet = Sheet
+            If _sheet IsNot Nothing Then
+                Dim editors = _sheet.CustomCellInplaceEditors.GetCustomCellInplaceEditors(_sheet.Selection)
                 If editors.Count = 1 Then
                     _control.OpenCellEditor(CellEditorMode.Edit)
                 End If
