@@ -15,6 +15,8 @@ Namespace DataEntryFormSample
 		''' </summary>
 		<STAThread>
 		Shared Sub Main()
+			DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2019 Colorful")
+			DevExpress.Skins.SkinManager.EnableFormSkins()
 			Application.EnableVisualStyles()
 			Application.SetCompatibleTextRenderingDefault(False)
 			Application.Run(New MainForm())

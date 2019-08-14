@@ -1,218 +1,230 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.ComponentModel
-Imports System.Linq
+﻿Imports System.ComponentModel
 Imports System.Runtime.CompilerServices
-Imports System.Text
-Imports System.Threading.Tasks
 
 Namespace DataEntryFormSample
-	''' <summary>
-	''' An entity class that exposes basic properties for a payroll. 
-	''' </summary>
-	Public Class PayrollModel
-		Implements INotifyPropertyChanged
 
-'INSTANT VB NOTE: The variable employeeName was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private employeeName_Renamed As String
-'INSTANT VB NOTE: The variable hourlyWage was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private hourlyWage_Renamed As Double
-'INSTANT VB NOTE: The variable regularHoursWorked was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private regularHoursWorked_Renamed As Double
-'INSTANT VB NOTE: The variable vacationHours was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private vacationHours_Renamed As Double
-'INSTANT VB NOTE: The variable sickHours was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private sickHours_Renamed As Double
-'INSTANT VB NOTE: The variable overtimeHours was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private overtimeHours_Renamed As Double
-'INSTANT VB NOTE: The variable overtimeRate was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private overtimeRate_Renamed As Double
-'INSTANT VB NOTE: The variable otherDeduction was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private otherDeduction_Renamed As Double
-'INSTANT VB NOTE: The variable taxStatus was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private taxStatus_Renamed As Integer
-'INSTANT VB NOTE: The variable federalAllowance was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private federalAllowance_Renamed As Integer
-'INSTANT VB NOTE: The variable stateTax was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private stateTax_Renamed As Double
-'INSTANT VB NOTE: The variable federalIncomeTax was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private federalIncomeTax_Renamed As Double
-'INSTANT VB NOTE: The variable socialSecurityTax was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private socialSecurityTax_Renamed As Double
-'INSTANT VB NOTE: The variable medicareTax was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private medicareTax_Renamed As Double
-'INSTANT VB NOTE: The variable insuranceDeduction was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private insuranceDeduction_Renamed As Double
-'INSTANT VB NOTE: The variable otherRegularDeduction was renamed since Visual Basic does not allow variables and other class members to have the same name:
-		Private otherRegularDeduction_Renamed As Double
+    'An entity class that exposes basic properties for a payroll. 
+    Public Class PayrollModel
+        Implements INotifyPropertyChanged
 
-		Public Property EmployeeName() As String
-			Function(get) employeeName_Renamed
-			Set(ByVal value As String)
-				If employeeName_Renamed <> value Then
-					employeeName_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Private _employeeName As String
+        Private _hourlyWages As Double
+        Private _regularHoursWorked As Double
+        Private _vacationHours As Double
+        Private _sickHours As Double
+        Private _overtimeHours As Double
+        Private _overtimeRate As Double
+        Private _otherDeduction As Double
+        Private _taxStatus As Integer
+        Private _federalAllowance As Integer
+        Private _stateTax As Double
+        Private _federalIncomeTax As Double
+        Private _socialSecurityTax As Double
+        Private _medicareTax As Double
+        Private _insuranceDeduction As Double
+        Private _otherRegularDeduction As Double
 
-		Public Property HourlyWage() As Double
-			Function(get) hourlyWage_Renamed
-			Set(ByVal value As Double)
-				If hourlyWage_Renamed <> value Then
-					hourlyWage_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property EmployeeName() As String
+            Get
+                Return _employeeName
+            End Get
+            Set(ByVal value As String)
+                If _employeeName <> value Then
+                    _employeeName = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property RegularHoursWorked() As Double
-			Function(get) regularHoursWorked_Renamed
-			Set(ByVal value As Double)
-				If regularHoursWorked_Renamed <> value Then
-					regularHoursWorked_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property HourlyWages() As Double
+            Get
+                Return _hourlyWages
+            End Get
+            Set(ByVal value As Double)
+                If _hourlyWages <> value Then
+                    _hourlyWages = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property VacationHours() As Double
-			Function(get) vacationHours_Renamed
-			Set(ByVal value As Double)
-				If vacationHours_Renamed <> value Then
-					vacationHours_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property RegularHoursWorked() As Double
+            Get
+                Return _regularHoursWorked
+            End Get
+            Set(ByVal value As Double)
+                If _regularHoursWorked <> value Then
+                    _regularHoursWorked = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property SickHours() As Double
-			Function(get) sickHours_Renamed
-			Set(ByVal value As Double)
-				If sickHours_Renamed <> value Then
-					sickHours_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property VacationHours() As Double
+            Get
+                Return _vacationHours
+            End Get
+            Set(ByVal value As Double)
+                If _vacationHours <> value Then
+                    _vacationHours = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property OvertimeHours() As Double
-			Function(get) overtimeHours_Renamed
-			Set(ByVal value As Double)
-				If overtimeHours_Renamed <> value Then
-					overtimeHours_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property SickHours() As Double
+            Get
+                Return _sickHours
+            End Get
+            Set(ByVal value As Double)
+                If _sickHours <> value Then
+                    _sickHours = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property OvertimeRate() As Double
-			Function(get) overtimeRate_Renamed
-			Set(ByVal value As Double)
-				If overtimeRate_Renamed <> value Then
-					overtimeRate_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property OvertimeHours() As Double
+            Get
+                Return _overtimeHours
+            End Get
+            Set(ByVal value As Double)
+                If _overtimeHours <> value Then
+                    _overtimeHours = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property OtherDeduction() As Double
-			Function(get) otherDeduction_Renamed
-			Set(ByVal value As Double)
-				If otherDeduction_Renamed <> value Then
-					otherDeduction_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property OvertimeRate() As Double
+            Get
+                Return _overtimeRate
+            End Get
+            Set(ByVal value As Double)
+                If _overtimeRate <> value Then
+                    _overtimeRate = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property TaxStatus() As Integer
-			Function(get) taxStatus_Renamed
-			Set(ByVal value As Integer)
-				If taxStatus_Renamed <> value Then
-					taxStatus_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property OtherDeduction() As Double
+            Get
+                Return _otherDeduction
+            End Get
+            Set(ByVal value As Double)
+                If _otherDeduction <> value Then
+                    _otherDeduction = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property FederalAllowance() As Integer
-			Function(get) federalAllowance_Renamed
-			Set(ByVal value As Integer)
-				If federalAllowance_Renamed <> value Then
-					federalAllowance_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property TaxStatus() As Integer
+            Get
+                Return _taxStatus
+            End Get
+            Set(ByVal value As Integer)
+                If _taxStatus <> value Then
+                    _taxStatus = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property StateTax() As Double
-			Function(get) stateTax_Renamed
-			Set(ByVal value As Double)
-				If stateTax_Renamed <> value Then
-					stateTax_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property FederalAllowance() As Integer
+            Get
+                Return _federalAllowance
+            End Get
+            Set(ByVal value As Integer)
+                If _federalAllowance <> value Then
+                    _federalAllowance = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property FederalIncomeTax() As Double
-			Function(get) federalIncomeTax_Renamed
-			Set(ByVal value As Double)
-				If federalIncomeTax_Renamed <> value Then
-					federalIncomeTax_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property StateTax() As Double
+            Get
+                Return _stateTax
+            End Get
+            Set(ByVal value As Double)
+                If _stateTax <> value Then
+                    _stateTax = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property SocialSecurityTax() As Double
-			Function(get) socialSecurityTax_Renamed
-			Set(ByVal value As Double)
-				If socialSecurityTax_Renamed <> value Then
-					socialSecurityTax_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property FederalIncomeTax() As Double
+            Get
+                Return _federalIncomeTax
+            End Get
+            Set(ByVal value As Double)
+                If _federalIncomeTax <> value Then
+                    _federalIncomeTax = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property MedicareTax() As Double
-			Function(get) medicareTax_Renamed
-			Set(ByVal value As Double)
-				If medicareTax_Renamed <> value Then
-					medicareTax_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property SocialSecurityTax() As Double
+            Get
+                Return _socialSecurityTax
+            End Get
+            Set(ByVal value As Double)
+                If _socialSecurityTax <> value Then
+                    _socialSecurityTax = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property InsuranceDeduction() As Double
-			Function(get) insuranceDeduction_Renamed
-			Set(ByVal value As Double)
-				If insuranceDeduction_Renamed <> value Then
-					insuranceDeduction_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property MedicareTax() As Double
+            Get
+                Return _medicareTax
+            End Get
+            Set(ByVal value As Double)
+                If _medicareTax <> value Then
+                    _medicareTax = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Property OtherRegularDeduction() As Double
-			Function(get) otherRegularDeduction_Renamed
-			Set(ByVal value As Double)
-				If otherRegularDeduction_Renamed <> value Then
-					otherRegularDeduction_Renamed = value
-					NotifyPropertyChanged()
-				End If
-			End Set
-		End Property
+        Public Property InsuranceDeduction() As Double
+            Get
+                Return _insuranceDeduction
+            End Get
+            Set(ByVal value As Double)
+                If _insuranceDeduction <> value Then
+                    _insuranceDeduction = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+        Public Property OtherRegularDeduction() As Double
+            Get
+                Return _otherRegularDeduction
+            End Get
+            Set(ByVal value As Double)
+                If _otherRegularDeduction <> value Then
+                    _otherRegularDeduction = value
+                    NotifyPropertyChanged()
+                End If
+            End Set
+        End Property
 
-		' This method is called by the Set accessor of each property.  
-		' The CallerMemberName attribute applied to the optional propertyName parameter  
-		' causes the property name of the caller to be substituted as an argument.
-		Private Sub NotifyPropertyChanged(Optional <CallerMemberName> ByVal propertyName As String = "")
-			PropertyChanged?.Invoke(Me, New PropertyChangedEventArgs(propertyName))
-		End Sub
-	End Class
+#Region "INotifyPropertyChanged members"
+        Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+
+        ' This method is called by the Set accessor of each property.  
+        ' The CallerMemberName attribute applied to the optional propertyName parameter  
+        ' causes the property name of the caller to be substituted as an argument.
+        Private Sub NotifyPropertyChanged(<CallerMemberName> ByVal Optional propertyName As String = "")
+            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+        End Sub
+#End Region
+    End Class
 End Namespace
